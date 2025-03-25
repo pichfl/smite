@@ -24,6 +24,7 @@ class LoginRouteComponent extends Component {
   };
 
   <template>
+    {{! template-lint-disable require-input-label}}
     {{pageTitle "Login"}}
     <h1>Login</h1>
 

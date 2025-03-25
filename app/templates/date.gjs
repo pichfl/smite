@@ -1,6 +1,5 @@
 import RouteTemplate from 'ember-route-template';
 import Component from '@glimmer/component';
-import { on } from '@ember/modifier';
 import { service } from '@ember/service';
 
 import pageTitle from 'ember-page-title/helpers/page-title';
@@ -28,7 +27,7 @@ class DateRouteComponent extends Component {
     const formData = new FormData(event.target, event.target.submitter);
 
     for (const [key, value] of formData) {
-     console.log(`${key}: ${value}\n`);
+      console.log(`${key}: ${value}\n`);
     }
 
     this.mite.submit({

@@ -14,6 +14,6 @@ label.option {
   height: 3.2rem;
 }
 
-label:has([type='text']) span {
+label:has([type="text"]) span {
   display: none;
 }

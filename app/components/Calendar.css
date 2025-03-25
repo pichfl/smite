@@ -60,7 +60,7 @@ th div {
 [data-melt-calendar-cell] {
 }
 
-[data-melt-calendar-cell][data-outside-month='true'][data-outside-visible-months='true'] {
+[data-melt-calendar-cell][data-outside-month="true"][data-outside-visible-months="true"] {
 }
 
 [data-today] {

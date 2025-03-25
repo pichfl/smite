@@ -86,6 +86,7 @@ export default class CalendarComponent extends Component {
   }
 
   <template>
+    {{! template-lint-disable no-unsupported-role-attributes}}
     <div data-melt-calendar>
       <header>
         <button type="button" {{on "click" this.previousDay}}><ChevronLeft
