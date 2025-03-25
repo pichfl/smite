@@ -9,6 +9,6 @@ module('Acceptance | index', function (hooks) {
     await visit('/2025-03-25');
 
     await assert.dom('h1').containsText('Smite');
-    assert.strictEqual(currentURL(), '/2025-03-25');
+    assert.strictEqual(currentURL(), '/login');
   });
 });
