@@ -1,0 +1,19 @@
+fieldset {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1 1 100%;
+  gap: 0.5rem;
+}
+
+.option {
+  flex: 1 0 auto;
+  display: block;
+}
+
+label.option {
+  height: 3.2rem;
+}
+
+label:has([type='text']) span {
+  display: none;
+}

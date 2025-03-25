@@ -1,0 +1,14 @@
+diff --git a/src/lib/replaceHbsInJs.js b/src/lib/replaceHbsInJs.js
+index c9fd2cf32e179ad1cd99205701cc1adc575d4aa0..9fe53fa7126b578acf5c9a8ba0004aa6296b7053 100644
+--- a/src/lib/replaceHbsInJs.js
++++ b/src/lib/replaceHbsInJs.js
+@@ -8,6 +8,9 @@ const parseOptions = {
+         sourceType: 'module',
+         allowImportExportEverywhere: true,
+         tokens: true,
++        plugins: [
++          "decorators",
++        ],
+       });
+     },
+   },

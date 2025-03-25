@@ -1,39 +1,99 @@
 {
-	"name": "smite",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"test": "npm run test:integration && npm run test:unit",
-		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write .",
-		"test:integration": "playwright test",
-		"test:unit": "vitest"
-	},
-	"devDependencies": {
-		"@internationalized/date": "^3.5.4",
-		"@melt-ui/svelte": "^0.81.0",
-		"@playwright/test": "^1.44.1",
-		"@sveltejs/adapter-auto": "^3.2.1",
-		"@sveltejs/adapter-static": "^3.0.1",
-		"@sveltejs/kit": "^2.5.10",
-		"@sveltejs/vite-plugin-svelte": "^3.1.1",
-		"@types/eslint": "^8.56.10",
-		"eslint": "^9.4.0",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-svelte": "^2.39.0",
-		"lodash-es": "^4.17.21",
-		"prettier": "^3.3.0",
-		"prettier-plugin-svelte": "^3.2.3",
-		"svelte": "^5.0.0-next.1",
-		"svelte-concurrency": "^0.6.0",
-		"vite": "^5.2.12",
-		"vitest": "^1.6.0"
-	},
-	"type": "module",
-	"dependencies": {
-		"dayjs": "^1.11.11"
-	}
+  "name": "smite",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Small description for smite goes here",
+  "repository": "",
+  "license": "MIT",
+  "author": "",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "vite build",
+    "format": "prettier . --cache --write",
+    "lint": "concurrently \"pnpm:lint:*(!fix)\" --names \"lint:\" --prefixColors auto",
+    "lint:fix": "concurrently \"pnpm:lint:*:fix\" --names \"fix:\" --prefixColors auto && pnpm format",
+    "lint:format": "prettier . --cache --check",
+    "lint:hbs": "ember-template-lint .",
+    "lint:hbs:fix": "ember-template-lint . --fix",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "start": "vite",
+    "test": "concurrently \"pnpm:lint\" \"pnpm:test:*\" --names \"lint,test:\" --prefixColors auto",
+    "test:ember": "vite build --mode test && ember test --path dist"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/eslint-parser": "^7.26.10",
+    "@babel/plugin-transform-runtime": "^7.26.10",
+    "@ember/optional-features": "^2.2.0",
+    "@ember/string": "^4.0.0",
+    "@ember/test-helpers": "^4.0.5",
+    "@embroider/compat": "^4.0.0-alpha.0",
+    "@embroider/config-meta-loader": "^1.0.0-alpha.0",
+    "@embroider/core": "^4.0.0-alpha.0",
+    "@embroider/macros": "^1.16.12",
+    "@embroider/vite": "^1.0.0-alpha.0",
+    "@eslint/js": "^9.23.0",
+    "@glimmer/component": "^2.0.0",
+    "@glimmer/tracking": "^1.1.2",
+    "@internationalized/date": "^3.6.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "babel-plugin-ember-template-compilation": "^2.4.0",
+    "concurrently": "^9.1.2",
+    "date-fns": "^4.1.0",
+    "dayjs": "^1.11.13",
+    "decorator-transforms": "^2.3.0",
+    "ember-auto-import": "^2.10.0",
+    "ember-cli": "~6.3.0",
+    "ember-cli-babel": "^8.2.0",
+    "ember-cli-deprecation-workflow": "^3.3.0",
+    "ember-cli-htmlbars": "^6.3.0",
+    "ember-load-initializers": "^3.0.1",
+    "ember-modifier": "^4.2.0",
+    "ember-page-title": "^9.0.1",
+    "ember-qunit": "^9.0.1",
+    "ember-resolver": "^13.1.0",
+    "ember-route-template": "^1.0.3",
+    "ember-scoped-css": "^0.23.1",
+    "ember-source": "~6.3.0",
+    "ember-template-imports": "^4.3.0",
+    "ember-template-lint": "^6.1.0",
+    "ember-welcome-page": "^7.0.2",
+    "eslint": "^9.23.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-ember": "^12.5.0",
+    "eslint-plugin-n": "^17.16.2",
+    "eslint-plugin-qunit": "^8.1.2",
+    "globals": "^15.15.0",
+    "lodash-es": "^4.17.21",
+    "prettier": "^3.5.3",
+    "prettier-plugin-ember-template-tag": "^2.0.4",
+    "qunit": "^2.24.1",
+    "qunit-dom": "^3.4.0",
+    "temporal-polyfill": "^0.2.5",
+    "tracked-built-ins": "^3.4.0",
+    "vite": "^6.0.0"
+  },
+  "engines": {
+    "node": ">= 18"
+  },
+  "ember": {
+    "edition": "octane"
+  },
+  "ember-addon": {
+    "type": "app",
+    "version": 2
+  },
+  "exports": {
+    "./tests/*": "./tests/*",
+    "./*": "./app/*"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "ember-scoped-css": "patches/ember-scoped-css.patch"
+    }
+  }
 }

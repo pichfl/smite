@@ -1,0 +1,49 @@
+form {
+  max-width: 70rem;
+  margin: 0 auto;
+  gap: 1.25rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+}
+
+.section {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 0.5rem 1rem -0.25rem var(--blue-500);
+}
+
+.action {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.action > * {
+  flex: 1 1 auto;
+}
+
+.action button {
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  background: var(--blue-500);
+  aspect-ratio: 1 / 1;
+  color: color-mix(in srgb, #fff 80%, transparent);
+  box-shadow: 0 0 0 0.7rem var(--blue-200);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.action button:hover {
+  background: var(--blue-700);
+  color: color-mix(in srgb, #fff 100%, transparent);
+  box-shadow: 0 0 0 0.9rem var(--blue-200);
+}
+
+.action button:active {
+  background: var(--blue-700);
+  color: color-mix(in srgb, #fff 100%, transparent);
+  box-shadow: 0 0 0 0.4rem var(--blue-300);
+  transition: box-shadow 0.1s ease-in-out;
+}
