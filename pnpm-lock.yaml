@@ -4,9 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+packageExtensionsChecksum: sha256-ZzwYeqgNXB7l1JOCUCxBR5AI39k11IHnuIf3O1iwJt0=
+
 patchedDependencies:
   ember-scoped-css:
-    hash: c9c3d00e9edd0b9b4c50582785b1e81c6877f1c53ffd662b1c758e1232383a63
+    hash: ae02c3d87179867d9f559ba98e6f9d48fb82a743cec485b9ea32a7cdda304416
     path: patches/ember-scoped-css.patch
 
 importers:
@@ -114,7 +116,7 @@ importers:
         version: 1.0.3
       ember-scoped-css:
         specifier: ^0.23.1
-        version: 0.23.1(patch_hash=c9c3d00e9edd0b9b4c50582785b1e81c6877f1c53ffd662b1c758e1232383a63)(@babel/core@7.26.10)(ember-template-lint@6.1.0)(webpack@5.98.0)
+        version: 0.23.1(patch_hash=ae02c3d87179867d9f559ba98e6f9d48fb82a743cec485b9ea32a7cdda304416)(@babel/core@7.26.10)(ember-template-lint@6.1.0)(webpack@5.98.0)
       ember-source:
         specifier: ~6.3.0
         version: 6.3.0(@glimmer/component@2.0.0)(rsvp@4.8.5)(webpack@5.98.0)
@@ -3148,6 +3150,10 @@ packages:
   find-index@1.1.1:
     resolution: {integrity: sha512-XYKutXMrIK99YMUPf91KX5QVJoG31/OsgftD6YoTPAObfQIxM4ziA9f0J1AsqKhJmo+IeaIPP0CFopTD4bdUBw==}
 
+  find-up-simple@1.0.1:
+    resolution: {integrity: sha512-afd4O7zpqHeRyg4PfDQsXmlDe2PfdHtJt6Akt8jOWaApLOZk5JXs6VMR29lz03pRe9mpykrRCYIYxaJYcfpncQ==}
+    engines: {node: '>=18'}
+
   find-up@2.1.0:
     resolution: {integrity: sha512-NWzkk0jSJtTt08+FBFMvXoeZnOJD+jTtsRmBYbAIzJdX6l7dLgR7CTubCM5/eDdPUBvLCeVasP1brfVR/9/EZQ==}
     engines: {node: '>=4'}
@@ -4477,6 +4483,10 @@ packages:
   p-try@2.2.0:
     resolution: {integrity: sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==}
     engines: {node: '>=6'}
+
+  package-up@5.0.0:
+    resolution: {integrity: sha512-MQEgDUvXCa3sGvqHg3pzHO8e9gqTCMPVrWUko3vPQGntwegmFo52mZb2abIVTjFnUcW0BcPz0D93jV5Cas1DWA==}
+    engines: {node: '>=18'}
 
   parent-module@1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
@@ -9113,7 +9123,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ember-scoped-css@0.23.1(patch_hash=c9c3d00e9edd0b9b4c50582785b1e81c6877f1c53ffd662b1c758e1232383a63)(@babel/core@7.26.10)(ember-template-lint@6.1.0)(webpack@5.98.0):
+  ember-scoped-css@0.23.1(patch_hash=ae02c3d87179867d9f559ba98e6f9d48fb82a743cec485b9ea32a7cdda304416)(@babel/core@7.26.10)(ember-template-lint@6.1.0)(webpack@5.98.0):
     dependencies:
       '@babel/parser': 7.26.10
       '@embroider/addon-shim': 1.9.0
@@ -9130,6 +9140,7 @@ snapshots:
       ember-template-lint: 6.1.0
       ember-template-recast: 6.1.5
       glob: 8.1.0
+      package-up: 5.0.0
       postcss: 8.5.3
       postcss-selector-parser: 6.1.2
       recast: 0.23.11
@@ -9863,6 +9874,8 @@ snapshots:
       pkg-dir: 4.2.0
 
   find-index@1.1.1: {}
+
+  find-up-simple@1.0.1: {}
 
   find-up@2.1.0:
     dependencies:
@@ -11325,6 +11338,10 @@ snapshots:
   p-try@1.0.0: {}
 
   p-try@2.2.0: {}
+
+  package-up@5.0.0:
+    dependencies:
+      find-up-simple: 1.0.1
 
   parent-module@1.0.1:
     dependencies:
