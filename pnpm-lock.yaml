@@ -8,7 +8,7 @@ packageExtensionsChecksum: sha256-ZzwYeqgNXB7l1JOCUCxBR5AI39k11IHnuIf3O1iwJt0=
 
 patchedDependencies:
   ember-scoped-css:
-    hash: ae02c3d87179867d9f559ba98e6f9d48fb82a743cec485b9ea32a7cdda304416
+    hash: fb01030522d3a6d30e6db81e2669c364b07069f8ad1a02e1494e1dd92011db0d
     path: patches/ember-scoped-css.patch
 
 importers:
@@ -116,7 +116,7 @@ importers:
         version: 1.0.3
       ember-scoped-css:
         specifier: ^0.23.1
-        version: 0.23.1(patch_hash=ae02c3d87179867d9f559ba98e6f9d48fb82a743cec485b9ea32a7cdda304416)(@babel/core@7.26.10)(ember-template-lint@6.1.0)(webpack@5.98.0)
+        version: 0.23.1(patch_hash=fb01030522d3a6d30e6db81e2669c364b07069f8ad1a02e1494e1dd92011db0d)(@babel/core@7.26.10)(ember-template-lint@6.1.0)(webpack@5.98.0)
       ember-source:
         specifier: ~6.3.0
         version: 6.3.0(@glimmer/component@2.0.0)(rsvp@4.8.5)(webpack@5.98.0)
@@ -9123,7 +9123,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ember-scoped-css@0.23.1(patch_hash=ae02c3d87179867d9f559ba98e6f9d48fb82a743cec485b9ea32a7cdda304416)(@babel/core@7.26.10)(ember-template-lint@6.1.0)(webpack@5.98.0):
+  ember-scoped-css@0.23.1(patch_hash=fb01030522d3a6d30e6db81e2669c364b07069f8ad1a02e1494e1dd92011db0d)(@babel/core@7.26.10)(ember-template-lint@6.1.0)(webpack@5.98.0):
     dependencies:
       '@babel/parser': 7.26.10
       '@embroider/addon-shim': 1.9.0
