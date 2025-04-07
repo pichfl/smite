@@ -1,4 +1,3 @@
-// import { createCalendar, melt } from '@melt-ui/svelte';
 import { today, parseDate, isWeekend } from '@internationalized/date';
 
 import ChevronLeft from 'smite/icons/chevron-left';
@@ -6,25 +5,6 @@ import ChevronRight from 'smite/icons/chevron-right';
 import { fn } from '@ember/helper';
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
-
-// const {
-// 	elements: { calendar, heading, grid, cell, prevButton, nextButton },
-// 	states: { months, headingValue, weekdays, value },
-// 	helpers: { isDateDisabled, isDateUnavailable },
-// 	options: { locale },
-// } = createCalendar({
-// 	defaultValue: $page.params.date ? parseDate($page.params.date) : today(),
-// 	weekStartsOn: 1,
-// });
-
-// export let onSelectDate = () => {};
-
-// locale.set('en-US');
-
-// function selectDate(date) {
-// 	value.set(date);
-// 	onSelectDate(date);
-// }
 
 import Component from '@glimmer/component';
 
@@ -77,12 +57,12 @@ export default class CalendarComponent extends Component {
 
   @action
   previousDay() {
-    this.selectDate(this.date.set({ day: this.date.day - 1 }));
+    this.selectDate(this.date.subtract({ days: 1 }));
   }
 
   @action
   nextDay() {
-    this.selectDate(this.date.set({ day: this.date.day + 1 }));
+    this.selectDate(this.date.add({ days: 1 }));
   }
 
   <template>
