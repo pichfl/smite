@@ -22,7 +22,7 @@ class DateRouteComponent extends Component {
     this.router.refresh('application');
   };
 
-  submit = (event) => {
+  submit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target, event.target.submitter);
 
@@ -30,12 +30,14 @@ class DateRouteComponent extends Component {
       console.log(`${key}: ${value}\n`);
     }
 
-    this.mite.submit({
+    await this.mite.submit({
       date_at: this.args.model.date,
       minutes: formData.get('duration'),
       project_id: formData.get('project'),
       service_id: formData.get('service'),
     });
+
+    this.router.refresh();
   };
 
   <template>
