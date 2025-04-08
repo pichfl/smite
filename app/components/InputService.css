@@ -1,0 +1,56 @@
+li {
+  display: block;
+}
+
+.services {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
+}
+
+.services span {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.services li {
+  position: relative;
+}
+
+.services li button {
+  position: absolute;
+  bottom: 0.15rem;
+  right: 0.15rem;
+  padding: 0.25rem;
+  display: grid;
+  opacity: 0;
+  user-select: none;
+  z-index: 2;
+  background: var(--blue-700);
+  border-radius: 0.6rem;
+  color: #fff;
+}
+
+.services li svg {
+  display: block;
+  margin: auto;
+}
+
+.services li:hover button:hover {
+  opacity: 1;
+  user-select: auto;
+}
+
+/* As soon as you use the .checkable class here you can't rely on the gobal css because it will get modularised. I don't know what we're trying to override here but lets not */
+
+/* .checkable:has([value='']:checked) {
+  background: radial-gradient(circle at 90% 10%, var(--blue-400), var(--blue-500));
+  box-shadow:
+    inset 0 0 0 1px var(--blue-600),
+    0 0.125rem 0.5rem -0.125rem var(--blue-600);
+  color: #fff;
+  text-shadow: 0 0 0.25rem var(--blue-600);
+} */

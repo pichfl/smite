@@ -1,0 +1,31 @@
+header {
+  background: var(--blue-900);
+  color: #fff;
+}
+
+header p {
+  margin-left: auto;
+}
+
+a,
+button {
+  padding: 0.25rem 0.5rem;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+}
+
+div,
+main {
+  padding: 1rem;
+}
+
+div {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+main {
+  margin: 0 auto 3rem;
+}

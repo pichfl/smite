@@ -1,38 +1,57 @@
-# create-svelte
+# smite
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+This README outlines the details of collaborating on this Ember application.
+A short introduction of this app could easily go here.
 
-## Creating a project
+## Prerequisites
 
-If you're seeing this, you've probably already done this step. Congrats!
+You will need the following things properly installed on your computer.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/)
+- [pnpm](https://pnpm.io/)
+- [Ember CLI](https://cli.emberjs.com/release/)
+- [Google Chrome](https://google.com/chrome/)
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## Installation
 
-## Developing
+- `git clone <repository-url>` this repository
+- `cd smite`
+- `pnpm install`
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Running / Development
 
-```bash
-npm run dev
+- `pnpm start`
+- Visit your app at [http://localhost:4200](http://localhost:4200).
+- Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+### Code Generators
 
-## Building
+Make use of the many generators for code, try `ember help generate` for more details
 
-To create a production version of your app:
+### Running Tests
 
-```bash
-npm run build
-```
+- `pnpm test`
+- `pnpm test:ember --server`
 
-You can preview the production build with `npm run preview`.
+### Linting
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+- `pnpm lint`
+- `pnpm lint:fix`
+
+### Building
+
+- `pnpm ember build` (development)
+- `pnpm build` (production)
+
+### Deploying
+
+Specify what it takes to deploy your app.
+
+## Further Reading / Useful Links
+
+- [ember.js](https://emberjs.com/)
+- [ember-cli](https://cli.emberjs.com/release/)
+- Development Browser Extensions
+  - [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
+  - [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
