@@ -1,4 +1,9 @@
-import { today, parseDate, isWeekend } from '@internationalized/date';
+import {
+  today,
+  parseDate,
+  isWeekend,
+  startOfWeek,
+} from '@internationalized/date';
 
 import ChevronLeft from 'smite/icons/chevron-left';
 import ChevronRight from 'smite/icons/chevron-right';
@@ -33,6 +38,24 @@ export default class CalendarComponent extends Component {
 
   get days() {
     return Array.from({ length: getDaysInMonth(this.date) }, (_, i) => i + 1);
+  }
+
+  get weeks() {
+    const weeks = {};
+
+    for (let day of this.days) {
+      // this isn't really a side effect 🙈
+      // eslint-disable-next-line ember/no-side-effects
+      let monday = startOfWeek(this.date.set({ day }), navigator.language);
+
+      if (weeks[monday]) {
+        weeks[monday].push(day);
+      } else {
+        weeks[monday] = [day];
+      }
+    }
+
+    return weeks;
   }
 
   @action
@@ -77,38 +100,24 @@ export default class CalendarComponent extends Component {
         <button type="button" {{on "click" this.nextDay}}><ChevronRight
           /></button>
       </header>
-      <div>
-        <table>
-          <thead aria-hidden="true">
-            <tr>
-              {{#each this.weekdays as |day|}}
-                <th>
-                  {{day}}
-                </th>
-              {{/each}}
-            </tr>
-          </thead>
-          <tbody>
 
-            <tr>
-              {{#each this.days as |day|}}
-                <td
-                  {{!-- aria-disabled={{$isDateDisabled(date) || $isDateUnavailable(date)}} --}}
-                >
-                  <button
-                    type="button"
-                    aria-selected={{this.isSelected day}}
-                    data-today={{this.isToday day}}
-                    data-weekend={{this.isWeekend day}}
-                    {{on "click" (fn this.selectDay day)}}
-                  >
-                    {{day}}
-                  </button>
-                </td>
-              {{/each}}
-            </tr>
-          </tbody>
-        </table>
+      <div class="weeks">
+        {{#each-in this.weeks as |startOfWeek days|}}
+          <div class="days">
+            {{#each days as |day|}}
+              <button
+                class="day-button"
+                type="button"
+                aria-selected={{this.isSelected day}}
+                data-today={{this.isToday day}}
+                data-weekend={{this.isWeekend day}}
+                {{on "click" (fn this.selectDay day)}}
+              >
+                {{day}}
+              </button>
+            {{/each}}
+          </div>
+        {{/each-in}}
       </div>
     </div>
   </template>
