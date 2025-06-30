@@ -8,6 +8,7 @@
 
 header {
   display: flex;
+  align-items: center;
 }
 
 header div {
@@ -15,52 +16,8 @@ header div {
 }
 
 header button {
+  min-width: 2em;
   color: var(--blue-200);
-}
-
-[data-melt-calendar-prevbutton] {
-}
-
-[data-melt-calendar-nextbutton] {
-}
-
-[data-melt-calendar-heading] {
-}
-
-table {
-  display: flex;
-}
-
-table,
-table * {
-  display: flex;
-  flex-flow: row nowrap;
-  flex: 1 1 100%;
-}
-
-thead {
-  display: none;
-}
-
-tbody,
-tr,
-td {
-  display: contents;
-}
-
-th {
-}
-
-th div {
-}
-
-[data-melt-calendar-grid] {
-}
-
-[data-melt-calendar-cell] {
-}
-
-[data-melt-calendar-cell][data-outside-month="true"][data-outside-visible-months="true"] {
 }
 
 [data-today] {
@@ -77,7 +34,23 @@ th div {
   color: var(--blue-200);
 }
 
-td button {
+.weeks {
+  display: flex;
+  flex-direction: column;
+}
+
+.days {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (width > 1000px) {
+  .weeks {
+    flex-direction: row;
+  }
+}
+
+button.day-button {
   display: block;
   appearance: none;
   border: 0;
